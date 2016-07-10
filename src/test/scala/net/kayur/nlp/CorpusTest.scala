@@ -60,4 +60,10 @@ class CorpusTest extends FunSuite {
     assert(!exportStr.contains("8:2"))
     assert(!exportStr.contains("13:1"))
   }
+
+  test("Export to JSON") {
+    val c = corpus
+    val str = c.export(CorpusExportFormat.Json)
+    println(str)
+  }
 }
