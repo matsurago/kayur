@@ -12,17 +12,17 @@ object CorpusBuilder {
 
   def build(documents: List[String]): Corpus = {
 
-    countUnique(extractWords())
-      .map(pair => )
+    //countUnique(extractWords())
+    //  .map(pair => )
 
     new Corpus(
-      documents.map(text => new Document()),
+      List(), //documents.map(text => new Document()),
       indexToWordMap.toMap
     )
   }
 
   def extractWords(text: String, tokenize: String => List[String], process: String => String): List[String] = {
-    val processFunction = applyCache(process)
+    val processFunction: String => String = applyCache(process)
 
     tokenize(text)
       .map(token => processFunction(token))
